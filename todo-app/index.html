@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskMaster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+let isLoggedIn = localStorage.getItem("isLoggedIn");
+if (isLoggedIn !== "true") {
+  window.location.href = "login.html";
+}
+</script>
+
+<div class="container">
+  <h1>✨ TaskMaster</h1>
+  <p class="tagline">Organize your tasks efficiently 📁</p>
+
+  <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  <button onclick="logout()">Logout</button>
+
+  <div class="input-area">
+    <input type="text" id="taskInput" placeholder="Enter your task...">
+    <button onclick="addTask()">Add</button>
+  </div>
+
+  <div class="filters">
+    <button onclick="filterTasks('all')">All</button>
+    <button onclick="filterTasks('completed')">Completed</button>
+    <button onclick="filterTasks('pending')">Pending</button>
+  </div>
+
+  <div class="progress-bar">
+    <div id="progressFill"></div>
+  </div>
+
+  <p id="progressText">Progress: 0%</p>
+
+  <ul id="taskList"></ul>
+
+  <p id="emptyMsg">No tasks yet 😅</p>
+  <p id="counter">Total Tasks: 0</p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
