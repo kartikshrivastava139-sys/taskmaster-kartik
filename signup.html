@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h2>📝 Sign Up</h2>
+
+  <input type="text" id="newUser" placeholder="Create username">
+  <input type="password" id="newPass" placeholder="Create password">
+
+  <button onclick="signup()">Sign Up</button>
+</div>
+
+<script>
+function signup() {
+  let user = document.getElementById("newUser").value;
+  let pass = document.getElementById("newPass").value;
+
+  if (user === "" || pass === "") {
+    alert("Fill all fields ❗");
+    return;
+  }
+
+  localStorage.setItem("user", user);
+  localStorage.setItem("pass", pass);
+
+  alert("Account created ✅");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
